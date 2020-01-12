@@ -1,0 +1,27 @@
+{
+
+  "manifest_version": 2,
+  "name": "Audio In Vitro - Audio Downloader",
+  "version": "1.0",
+
+  "description": "A web extention that downloads html5 audio files present in the page",
+
+  "icons": {
+    "48": "icons/a09.png"
+  },
+
+
+  "permissions": [
+    "activeTab"
+  ],
+
+  "browser_action": {
+    "default_icon": "icons/a09-32.png",
+    "default_title": "Audio In Vitro"
+  },
+
+  "background": {
+	"scripts": ["gogetAudio.js"]
+  }
+
+}
