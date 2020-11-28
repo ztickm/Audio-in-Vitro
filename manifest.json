@@ -12,7 +12,8 @@
 
 
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "tabs"
   ],
 
   "browser_action": {
@@ -22,6 +23,16 @@
 
   "background": {
 	"scripts": ["gogetAudio.js"]
-  }
+  },
+
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+F",
+        "mac": "MacCtrl+Shift+F"
+      },
+      "description": "Starts script"
+    }
+  }  
 
 }

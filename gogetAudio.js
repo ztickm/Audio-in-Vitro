@@ -1,8 +1,27 @@
 function launchScript(){
 
-    browser.tabs.executeScript({
-	file: "execute.js"
-    })
+
+  try {
+
+css = '.ztk-hovered-element {' +
+         'background-color: #e5e5e5;' +
+         'outline: 1px dashed red; !important' +
+         'outline-offset: -10px; !important' +
+	'}';
+
+    chrome.tabs.insertCSS({
+      code: css
+    });
+    
+  }
+  catch(e) {
+    console.log(`Error: ${e}`);
+  }
+  
+  chrome.tabs.executeScript({
+    file: "execute.js"
+  });
 }
-let audioSourceElm;
-browser.browserAction.onClicked.addListener(launchScript);
+
+
+chrome.browserAction.onClicked.addListener(launchScript);
